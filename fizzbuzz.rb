@@ -11,7 +11,7 @@ def fizzbuzz_1
       puts 'FizzBuzz'
     elsif n % 3 == 0
       puts 'Fizz'
-    elsif n % 5 
+    elsif n % 5 == 0
       puts 'Buzz'
     else 
       puts n
@@ -19,19 +19,24 @@ def fizzbuzz_1
   end
 end
 # Test it:
+puts "\n\nApproach 1"
 p fizzbuzz_1
+
 
 # Same concept but using a case statement:
 def fizzbuzz_2
   [*1..100].each do |n|
     case 
-    when n % 15 == 0 then "FizzBuzz"
-    when n % 3  == 0 then "Fizz"
-    when n % 5  == 0 then "Buzz"
-    else n
+    when n % 15 == 0 then puts "FizzBuzz"
+    when n % 3  == 0 then puts "Fizz"
+    when n % 5  == 0 then puts "Buzz"
+    else puts n
     end
   end
 end
+# Test it:
+puts "\n\nApproach 2"
+p fizzbuzz_2
 
 
 # Potentially a slightly simpler approach:
@@ -45,6 +50,7 @@ def fizzbuzz_3
   end
 end
 # Test it:
+puts "\n\nApproach 3"
 p fizzbuzz_3
 
 
@@ -53,10 +59,13 @@ def fizzbuzz_4
   rules = { 3 => 'Fizz', 5 => 'Buzz' }
 
   [*1..100].each do |n|
-    rules.each { |k, v| str = ''; str += v if n % k == 0; puts str.empty? ? n : str }
+    str = ''
+    rules.each { |k, v| str += v if n % k == 0 }
+    puts str.empty? ? n : str
   end
 end
 # Test it:
+puts "\n\nApproach 4"
 p fizzbuzz_4
 
 
@@ -74,4 +83,5 @@ def fizzbuzz_5
     .each { |k, v| puts v.empty? ? k : v }
 end
 # Test it:
+puts "\n\nApproach 5"
 p fizzbuzz_5
