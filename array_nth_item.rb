@@ -1,7 +1,16 @@
 # Challenge: given an array and number n, return an array that only contains every nth record
-def challenge(array, n)
+def nth_items_1(array, n)
   array.each_slice(n).map(&:last)
 end
 # Test it:
-p challenge([*1..10], 3)
-# [3,6,9,10]
+p nth_items_1([*1..100], 11)
+# [11, 22, 33, 44, 55, 66, 77, 88, 99, 100]
+
+
+# Challenge: given an array and number n, return an array that only contains every nth record
+def nth_items_2(array, n)
+  array.select { |a| (array.index(a) + 1) % n == 0 }
+end
+# Test it:
+p nth_items_2([*1..100], 11)
+# [11, 22, 33, 44, 55, 66, 77, 88, 99]
