@@ -71,11 +71,12 @@ p duplicates_6([1,1,2,3,4,4,5,6,7,8,8])
 # => [1, 4, 8]
 
 
-# Using sort + reject:
+# Using sort + reject + with_index:
 def duplicates_7(array)
   array
     .sort
-    .reject { |item| array[array.index(item)] != array[array.index(item) + 1] }
+    .reject
+    .with_index { |_, index| array[index] != array[index + 1] }
     .uniq
 end
 # Test it:
