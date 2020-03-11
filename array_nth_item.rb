@@ -9,7 +9,7 @@ p nth_items_1([*1..100], 11)
 
 # Challenge: given an array and number n, return an array that only contains every nth record
 def nth_items_2(array, n)
-  array.select { |a| (array.index(a) + 1) % n == 0 }
+  array.select.with_index { |_, i| (i + 1) % n == 0 }
 end
 # Test it:
 p nth_items_2([*1..100], 11)
