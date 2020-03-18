@@ -35,10 +35,10 @@ end
 # and we calculate a random chance which will be a number between 0 and 1.
 # Then we loop through each option and check whether the random percentage chance is less than or equal to a given slice.
 # If so, return that option.
-  # Ex: random_chance(*[1..4]). The probability is 25% (1/4 = 0.25). We generate a random number, let's say we get 0.7.
+  # Ex: random_chance([*1..4]). The probability is 25% (1/4 = 0.25). We generate a random number, let's say we get 0.7.
   # So, in the above method, we will check if 0.7 <= 0.25, if so we'll return 1. It's not, so we move to the next item in our array and
   # and check if 0.7 <= 0.5, and if it is return 2. It's not so we move to the next item and check if our randomness is <= .75.
   # it is, so we return 3 that time.
 #
-  # Ex: random_chance(*['Heads', 'Tails']). The probability is 50% (1/2 = 0.5). We generate a random number, let's say we get 0.33.
+  # Ex: random_chance(['Heads', 'Tails']). The probability is 50% (1/2 = 0.5). We generate a random number, let's say we get 0.33.
   # we loop through our array and check if our random number (0.33) is <= 0.5. It is, so we return heads.
